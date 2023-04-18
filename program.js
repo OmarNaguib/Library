@@ -8,7 +8,6 @@ function Book(title,author,nPages,read) {
 }
 
 function addBookToLibrary(book) {
-    const container=document.querySelector(".container")
     const card=document.createElement("div");
 
     const title=document.createElement("h3");
@@ -30,17 +29,33 @@ function addBookToLibrary(book) {
     card.appendChild(nPages);
     card.appendChild(status);
 
-    container.appendChild(card);
+    myLibrary.push(card);
 }
 
 
 
 
 function displayBooks(library) {
-    library.array.forEach(book => {
-
+    const container=document.querySelector(".container")
+    library.forEach(book => {
+        container.appendChild(book)
     });
 }
 
 
-addBookToLibrary(new Book("The Hobbit","J.R.R. Tolkien",295,true))
+addBookToLibrary(new Book("The Hobbit","J.R.R. Tolkien",295,true));
+addBookToLibrary(new Book("The Hobbit","J.R.R. Tolkien",295,true));
+addBookToLibrary(new Book("The Hobbit","J.R.R. Tolkien",295,true));
+addBookToLibrary(new Book("The Hobbit","J.R.R. Tolkien",295,true));
+displayBooks(myLibrary);
+
+
+function openForm() {
+    document.querySelector("#form").style.display="block";
+    console.log("there");
+}
+
+function closeForm() {
+    document.querySelector("#form").style.display="none";
+    console.log("here");
+}

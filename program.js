@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 const myLibrary = [];
 
 function Book(title, author, nPages, read) {
@@ -10,7 +12,7 @@ function Book(title, author, nPages, read) {
 function addBookToLibrary(book) {
   const card = document.createElement('div');
 
-  const title = document.createElement('h3');
+  const title = document.createElement('h3')
   title.textContent = book.title;
 
   const author = document.createElement('p');
@@ -19,7 +21,7 @@ function addBookToLibrary(book) {
   const nPages = document.createElement('p');
   nPages.textContent = book.nPages;
 
-  const status = document.createElement('div');
+  const status = document.createElement('div') ;
   status.addEventListener('click', () => {
     status.classList.toggle('read');
   });
@@ -53,4 +55,8 @@ function openForm() {
 function closeForm() {
   document.querySelector('#form').style.display = 'none';
   console.log('here');
+}
+
+function submitForm() {
+  
 }

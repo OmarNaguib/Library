@@ -45,11 +45,13 @@ function displayBooks(library) {
 
 function openForm() {
   document.querySelector('#form').style.display = 'block';
-  console.log('there');
+
 }
 
 function closeForm() {
-  document.querySelector('#form').style.display = 'none';
+  const form=document.querySelector('#form');
+  form.style.display = 'none'
+  form.reset();
   console.log('here');
 }
 
@@ -64,7 +66,9 @@ function submitForm(e) {
   e.preventDefault();
   const values=getValues();
   closeForm()
-  
+  const book = new Book(...values)
+  addBookToLibrary(book)
+  displayBooks(myLibrary)
 
 
   

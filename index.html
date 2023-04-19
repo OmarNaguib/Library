@@ -10,8 +10,7 @@
   <body>
     <button class="new-button" onclick="openForm()">+</button>
 
-    <div id="form">
-      <form action="">
+      <form action="" id="form">
         <div>
           <label for="title">Book Title</label>
           <input type="text" id="title" />
@@ -28,12 +27,11 @@
           <label for="read">Finished reading?</label>
           <input type="checkbox" id="read" />
         </div>
-        <button type="submit" class="new"">Add</button>
-        <button type="button" class="cancel">
+        <button type="submit" class="new">Add</button>
+        <button type="button" class="cancel" onclick="closeForm()">
           Cancel
         </button>
       </form>
-    </div>
     <div class="container"></div>
   </body>
 </html>

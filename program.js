@@ -41,11 +41,7 @@ function displayBooks(library) {
   });
 }
 
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-displayBooks(myLibrary);
+
 
 function openForm() {
   document.querySelector('#form').style.display = 'block';
@@ -57,6 +53,34 @@ function closeForm() {
   console.log('here');
 }
 
-function submitForm() {
+function getValues() {
+  const inputs = document.querySelectorAll("input");
+  const [title,author,nPages] = [...inputs].map(input=> input.value).slice(0,-1);
+  const read = document.querySelector("input[type='checkbox']").checked;
+  return [title,author,nPages,read];
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const values=getValues();
+  closeForm()
+  
+
+
   
 }
+
+
+
+
+
+
+const submitButton=document.querySelector("button.new");
+submitButton.addEventListener("click",submitForm)
+
+
+addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
+addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
+addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
+addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
+displayBooks(myLibrary);

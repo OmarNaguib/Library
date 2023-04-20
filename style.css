@@ -59,7 +59,7 @@ header{
     ;
 }
 
-.new-area button{
+.new-area>button{
     grid-column: 2 / 3;
     justify-self: end;
 }
@@ -84,15 +84,44 @@ form{
     display: flex;
     flex-direction: column;
 }
+form>div{
+    display: flex;
+   margin-top: 5px;
 
-form>div,form label,form input{
-    width: 100%;
 }
 
-form .checkbox label,form .checkbox input{
-    width: auto;
+form label{
+    width:150px;
+    font-size: 1.2rem;
+    color: aliceblue;
+}
+form input{
+    font-size: 1.1rem;
+    border-radius: 5px;
+
+}
+form input[type=checkbox]{
+    height: 23px;
+    width: 23px;
+}
+form .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+form button{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
 }
 
+button.new{
+    background-color: mediumspringgreen;
+}
+
+button.cancel{
+    background-color: rgb(250, 93, 93);
+}
 .container{
     padding: 50px 0px;
     width: 80%;

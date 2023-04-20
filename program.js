@@ -29,23 +29,27 @@ function createDivs(book) {
   return [title,author,nPages,icons]
 }
 
-function createReadButton(){
+function createReadButton(index){
   const readButton = document.createElement('button') ;
   readButton.classList.add("read")
   const pictureDiv=document.createElement('div')
   readButton.appendChild(pictureDiv)
+  if (myLibrary[index].read) {
+    readButton.classList.add("true")
+  }
   readButton.addEventListener('click', () => {
+    myLibrary[index].read=!myLibrary[index].read;
     readButton.classList.toggle('true');
   });
   return readButton
 }
 
-function createDeleteButton(){
+function createDeleteButton(index){
   const deleteButton = document.createElement('button') ;
   deleteButton.classList.add("delete")
   const pictureDiv2=document.createElement('div')
   deleteButton.appendChild(pictureDiv2)
-  deleteButton.dataset.key=myLibrary.length
+  deleteButton.dataset.key=index
   deleteButton.addEventListener('click', (e) => {
     myLibrary.splice(e.target.dataset.key,1)
     displayBooks(myLibrary)
@@ -53,11 +57,11 @@ function createDeleteButton(){
   return deleteButton
 }
 
-function createCard(book) {
+function createCard(book,index) {
   const card = document.createElement('div');
   const [title,author,nPages,icons] = createDivs(book);
-  const readButton=createReadButton();
-  const deleteButton=createDeleteButton()
+  const readButton=createReadButton(index);
+  const deleteButton=createDeleteButton(index)
 
   icons.appendChild(deleteButton);
   icons.appendChild(readButton);
@@ -74,8 +78,10 @@ function createCard(book) {
 function displayBooks(library) {
   const container = document.querySelector('.container');
   container.innerHTML=""
+  let counter=0;
   library.forEach((book) => {
-    container.appendChild(createCard(book));
+    container.appendChild(createCard(book,counter));
+    counter+=1;
   });
 }
 
@@ -112,15 +118,11 @@ function submitForm(e) {
 
 
 
-
-// const submitButton=document.querySelector("button.new");
-// submitButton
 const form=document.querySelector("form")
 form.addEventListener("submit",submitForm)
 
 
 
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
+
 
 displayBooks(myLibrary);

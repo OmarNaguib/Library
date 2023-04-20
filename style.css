@@ -23,7 +23,7 @@ button.read>div{
 }
 
 button.true{
-    border: 3px solid green;
+    background-color: mediumspringgreen;
 }
 
 button.delete>div{
@@ -108,9 +108,7 @@ form .checkbox label,form .checkbox input{
     align-items: center;
     background-color: rgb(204, 201, 201);
     padding: 20px;
-
     border-radius: 10px;
-
     width: 200px;
 }
 

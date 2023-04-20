@@ -9,9 +9,7 @@ function Book(title, author, nPages, read) {
   this.read = read;
 }
 
-function addBookToLibrary(book) {
-  const card = document.createElement('div');
-
+function createDivs(book) {
   const title = document.createElement('h3')
   title.textContent = book.title;
 
@@ -23,7 +21,11 @@ function addBookToLibrary(book) {
 
   const icons=document.createElement('div');
   icons.classList.add("icons")
+  
+  return [title,author,nPages,icons]
+}
 
+function createReadButton(){
   const readButton = document.createElement('button') ;
   readButton.classList.add("read")
   const pictureDiv=document.createElement('div')
@@ -31,7 +33,10 @@ function addBookToLibrary(book) {
   readButton.addEventListener('click', () => {
     readButton.classList.toggle('true');
   });
+  return readButton
+}
 
+function createDeleteButton(){
   const deleteButton = document.createElement('button') ;
   deleteButton.classList.add("delete")
   const pictureDiv2=document.createElement('div')
@@ -41,6 +46,17 @@ function addBookToLibrary(book) {
     myLibrary.splice(e.target.dataset.key,1)
     displayBooks(myLibrary)
   });
+  return deleteButton
+}
+
+function addBookToLibrary(book) {
+  const card = document.createElement('div');
+  const [title,author,nPages,icons] = createDivs(book);
+  const readButton=createReadButton();
+  const deleteButton=createDeleteButton()
+
+
+
 
   icons.appendChild(deleteButton);
   icons.appendChild(readButton);

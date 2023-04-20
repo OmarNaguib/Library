@@ -21,21 +21,42 @@ function addBookToLibrary(book) {
   const nPages = document.createElement('p');
   nPages.textContent = book.nPages;
 
-  const status = document.createElement('div') ;
-  status.addEventListener('click', () => {
-    status.classList.toggle('read');
+  const icons=document.createElement('div');
+  icons.classList.add("icons")
+
+  const readButton = document.createElement('button') ;
+  readButton.classList.add("read")
+  const pictureDiv=document.createElement('div')
+  readButton.appendChild(pictureDiv)
+  readButton.addEventListener('click', () => {
+    readButton.classList.toggle('true');
   });
+
+  const deleteButton = document.createElement('button') ;
+  deleteButton.classList.add("delete")
+  const pictureDiv2=document.createElement('div')
+  deleteButton.appendChild(pictureDiv2)
+  deleteButton.dataset.key=myLibrary.length
+  deleteButton.addEventListener('click', (e) => {
+    myLibrary.splice(e.target.dataset.key,1)
+    displayBooks(myLibrary)
+  });
+
+  icons.appendChild(deleteButton);
+  icons.appendChild(readButton);
+  
 
   card.appendChild(title);
   card.appendChild(author);
   card.appendChild(nPages);
-  card.appendChild(status);
+  card.appendChild(icons);
 
   myLibrary.push(card);
 }
 
 function displayBooks(library) {
   const container = document.querySelector('.container');
+  container.innerHTML=""
   library.forEach((book) => {
     container.appendChild(book);
   });
@@ -68,10 +89,7 @@ function submitForm(e) {
   closeForm()
   const book = new Book(...values)
   addBookToLibrary(book)
-  displayBooks(myLibrary)
-
-
-  
+  displayBooks(myLibrary) 
 }
 
 
@@ -80,7 +98,10 @@ function submitForm(e) {
 
 
 const submitButton=document.querySelector("button.new");
-submitButton.addEventListener("click",submitForm)
+submitButton.addEventListener("submit",submitForm)
+
+// const deleteButton=document.querySelector("button.delete");
+// submitButton.addEventListener("click",deleteCard)
 
 
 addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));

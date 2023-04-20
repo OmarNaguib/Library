@@ -1,0 +1,34 @@
+.icons>button{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+button.read,button.delete{
+    height: 25px;
+    width: 100px;
+}
+button>div{
+    height: 25px;
+    width: 25px;
+}
+button.read>div{
+    background-image: url(icons/eye.svg);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.true{
+    border: 3px solid green;
+}
+
+button.delete>div{
+    background-image: url(icons/delete.svg);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button{
+
+}

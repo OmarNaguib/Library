@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <script src="program.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
@@ -10,28 +13,30 @@
   <body>
     <button class="new-button" onclick="openForm()">+</button>
 
-      <form action="" id="form">
+      <form action="" id="form" style="display:none;">
         <div>
           <label for="title">Book Title</label>
-          <input type="text" id="title" />
+          <input type="text" id="title" name="title"  required/>
         </div>
         <div>
           <label for="author">Author</label>
-          <input type="text" id="author" />
+          <input type="text" id="author" name="author" required/>
         </div>
         <div>
           <label for="pages">Number of pages</label>
-          <input type="tel" id="pages" />
+          <input type="number" id="pages" name="pages" required/>
         </div>
         <div>
           <label for="read">Finished reading?</label>
-          <input type="checkbox" id="read" />
+          <input type="checkbox" id="read" name="read" />
         </div>
         <button type="submit" class="new">Add</button>
         <button type="button" class="cancel" onclick="closeForm()">
           Cancel
         </button>
       </form>
-    <div class="container"></div>
+    <div class="container">
+      
+    </div>
   </body>
 </html>

@@ -93,7 +93,9 @@ function openForm() {
 }
 
 function closeForm() {
-  document.querySelector('#form').classList.toggle("hidden");
+  const form=document.querySelector('#form');
+  form.reset();
+  form.classList.toggle("hidden");
   console.log('here');
 }
 

@@ -1,3 +1,7 @@
+html,body{
+    margin: 0;
+    height: 100%;
+}
 .icons>button{
     display: grid;
     justify-content: center;
@@ -31,4 +35,29 @@ button.delete>div{
 
 button{
 
+}
+
+
+header{
+    margin: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.header-title{
+    font-size: 3rem;
+    width: 80%;
+}
+
+.new-area{
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-button{
+    font-size: 2rem;
 }

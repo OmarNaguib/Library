@@ -33,9 +33,6 @@ button.delete>div{
     background-position: center;
 }
 
-button{
-
-}
 
 
 header{
@@ -58,14 +55,18 @@ header{
     justify-content: center;
     align-items: center;
     gap: 50px;
+    background-color: rgb(92, 91, 91)
+    ;
 }
 
 .new-area button{
     grid-column: 2 / 3;
+    justify-self: end;
 }
 
 .new-area form{
     grid-column: 3 / 4;
+    justify-self: start;
 }
 
 
@@ -90,4 +91,29 @@ form>div,form label,form input{
 
 form .checkbox label,form .checkbox input{
     width: auto;
+}
+
+.container{
+    padding: 50px 0px;
+    width: 80%;
+    display: flex;
+    position: relative;
+    left: 10%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.container>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(204, 201, 201);
+    padding: 20px;
+
+    border-radius: 10px;
+
+    width: 200px;
+}
+
+.container .icons{
+    display: flex;
 }

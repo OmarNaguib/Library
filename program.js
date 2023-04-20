@@ -9,6 +9,10 @@ function Book(title, author, nPages, read) {
   this.read = read;
 }
 
+function addBookToLibrary(book) {
+  myLibrary.push(book)
+}
+
 function createDivs(book) {
   const title = document.createElement('h3')
   title.textContent = book.title;
@@ -49,14 +53,11 @@ function createDeleteButton(){
   return deleteButton
 }
 
-function addBookToLibrary(book) {
+function createCard(book) {
   const card = document.createElement('div');
   const [title,author,nPages,icons] = createDivs(book);
   const readButton=createReadButton();
   const deleteButton=createDeleteButton()
-
-
-
 
   icons.appendChild(deleteButton);
   icons.appendChild(readButton);
@@ -67,14 +68,14 @@ function addBookToLibrary(book) {
   card.appendChild(nPages);
   card.appendChild(icons);
 
-  myLibrary.push(card);
+  return card;
 }
 
 function displayBooks(library) {
   const container = document.querySelector('.container');
   container.innerHTML=""
   library.forEach((book) => {
-    container.appendChild(book);
+    container.appendChild(createCard(book));
   });
 }
 
@@ -86,9 +87,7 @@ function openForm() {
 }
 
 function closeForm() {
-  const form=document.querySelector('#form');
-  form.style.display = 'none'
-  form.reset();
+  document.querySelector('#form').classList.toggle("hidden");
   console.log('here');
 }
 
@@ -100,6 +99,7 @@ function getValues() {
 }
 
 function submitForm(e) {
+  console.log("here")
   e.preventDefault();
   const values=getValues();
   closeForm()
@@ -113,15 +113,14 @@ function submitForm(e) {
 
 
 
-const submitButton=document.querySelector("button.new");
-submitButton.addEventListener("submit",submitForm)
+// const submitButton=document.querySelector("button.new");
+// submitButton
+const form=document.querySelector("form")
+form.addEventListener("submit",submitForm)
 
-// const deleteButton=document.querySelector("button.delete");
-// submitButton.addEventListener("click",deleteCard)
 
 
 addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
 addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
-addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkien', 295, true));
+
 displayBooks(myLibrary);

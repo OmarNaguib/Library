@@ -65,7 +65,7 @@ function displayBooks(library) {
 
 
 function openForm() {
-  document.querySelector('#form').style.display = 'block';
+  document.querySelector('#form').classList.toggle("hidden");
 
 }
 

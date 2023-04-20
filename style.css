@@ -53,11 +53,41 @@ header{
 
 .new-area{
     height:200px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr 2fr;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
+
+.new-area button{
+    grid-column: 2 / 3;
+}
+
+.new-area form{
+    grid-column: 3 / 4;
+}
+
 
 .new-button{
     font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form>div,form label,form input{
+    width: 100%;
+}
+
+form .checkbox label,form .checkbox input{
+    width: auto;
 }

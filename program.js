@@ -2,11 +2,12 @@
 /* eslint-disable no-unused-vars */
 const myLibrary = [];
 
-function Book(title, author, nPages, read) {
-  this.title = title;
+class Book {
+  constructor(title, author, nPages, read){this.title = title;
   this.author = author;
   this.nPages = nPages;
   this.read = read;
+}
 }
 
 function addBookToLibrary(book) {
@@ -96,7 +97,6 @@ function closeForm() {
   const form=document.querySelector('#form');
   form.reset();
   form.classList.toggle("hidden");
-  console.log('here');
 }
 
 function getValues() {
@@ -107,7 +107,6 @@ function getValues() {
 }
 
 function submitForm(e) {
-  console.log("here")
   e.preventDefault();
   const values=getValues();
   closeForm()

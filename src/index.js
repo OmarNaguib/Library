@@ -1,3 +1,5 @@
+import firebase from "./firebase";
+
 const myLibrary = [];
 
 class Book {

@@ -3,34 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <script src="program.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="main.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
   </head>
   <body>
     <header>
-      <div class="header-title">
-        Library
-      </div>
+      <div class="header-title">Library</div>
     </header>
     <div class="new-area">
-      <button class="new-button" onclick="openForm()">+Add a book</button>
+      <button class="new-button">+Add a book</button>
 
       <form action="" id="form" class="hidden">
         <div>
           <label for="title">Book Title</label>
-          <input type="text" id="title" name="title"  required/>
+          <input type="text" id="title" name="title" required />
         </div>
         <div>
           <label for="author">Author</label>
-          <input type="text" id="author" name="author" required/>
+          <input type="text" id="author" name="author" required />
         </div>
         <div>
           <label for="pages">Number of pages</label>
-          <input type="number" id="pages" name="pages" required/>
+          <input type="number" id="pages" name="pages" required />
         </div>
         <div class="checkbox">
           <label for="read">Finished reading?</label>
@@ -38,14 +38,11 @@
         </div>
         <div class="buttons">
           <button type="submit" class="new">Add</button>
-          <button type="button" class="cancel" onclick="closeForm()"> Cancel </button>
-      </div>
+          <button type="button" class="cancel">Cancel</button>
+        </div>
       </form>
     </div>
 
-
-    <div class="container">
-      
-    </div>
+    <div class="container"></div>
   </body>
 </html>

@@ -3,6 +3,9 @@ body {
   margin: 0;
   height: 100%;
 }
+.hidde {
+  display: none;
+}
 .icons > button {
   display: grid;
   justify-content: center;

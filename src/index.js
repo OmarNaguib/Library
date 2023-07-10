@@ -123,4 +123,10 @@ newButton.addEventListener("click", openForm);
 const cancelButton = document.querySelector("button.cancel");
 cancelButton.addEventListener("click", closeForm);
 
+const signInButton = document.querySelector("button.sign-in");
+signInButton.addEventListener("click", firebase.signInFire);
+
+const signOutButton = document.querySelector("button.sign-out");
+signOutButton.addEventListener("click", firebase.signOutFire);
+
 displayBooks(myLibrary);

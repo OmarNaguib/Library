@@ -46,16 +46,10 @@ const signInFire = () =>
       // ...
     });
 
-const signOutFire = () => {
+const signOutFire = () =>
   signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-      console.log("signed-out");
-      console.log("here", app.auth().currentUser);
-    })
-    .catch((error) => {
-      // An error happened.
-    });
-};
+    .then(() => true)
+    .catch((error) => false);
+const getUser = () => auth.currentUser;
 
-export default { signInFire, signOutFire };
+export default { signInFire, signOutFire, getUser };

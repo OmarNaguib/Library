@@ -140,6 +140,7 @@ signInButton.addEventListener("click", signIn);
 const signOutButton = document.querySelector("button.sign-out");
 signOutButton.addEventListener("click", signOut);
 
-console.log(firebase.getUser());
-
+// on page load
+if (firebase.getUser()) ui.signedIn(firebase.getUser());
+else ui.signedOut();
 displayBooks(myLibrary);

@@ -143,3 +143,8 @@ button.cancel {
 .container .icons {
   display: flex;
 }
+
+.account {
+  display: flex;
+  align-items: center;
+}

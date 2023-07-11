@@ -120,6 +120,11 @@ async function signIn() {
   ui.signedIn(name);
 }
 
+async function signOut() {
+  const signedOut = await firebase.signOutFire();
+  if (signedOut) ui.signedOut();
+}
+
 const form = document.querySelector("form");
 form.addEventListener("submit", submitForm);
 
@@ -133,6 +138,8 @@ const signInButton = document.querySelector("button.sign-in");
 signInButton.addEventListener("click", signIn);
 
 const signOutButton = document.querySelector("button.sign-out");
-signOutButton.addEventListener("click", firebase.signOutFire);
+signOutButton.addEventListener("click", signOut);
+
+console.log(firebase.getUser());
 
 displayBooks(myLibrary);

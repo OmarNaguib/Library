@@ -3,10 +3,15 @@ const signOutButton = document.querySelector("button.sign-out");
 const nameDisplay = document.querySelector("div.name");
 
 const signedIn = (name) => {
-  console.log("ui");
   nameDisplay.textContent = name;
   signInButton.classList.add("hidden");
   signOutButton.classList.remove("hidden");
 };
 
-export default { signedIn };
+const signedOut = () => {
+  nameDisplay.textContent = "";
+  signInButton.classList.remove("hidden");
+  signOutButton.classList.add("hidden");
+};
+
+export default { signedIn, signedOut };
